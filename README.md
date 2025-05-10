@@ -1,28 +1,21 @@
-# Jutellane Homepage ï¿½ï¿½
+# Jutellane Solutions
 
-This is the official homepage for AWS Cloud Architect & DevSecOps Consultant **FNU Longla Justine Tekang**.
+**Innovating with purpose. Deploying what matters.**
 
-## íº€ Services Offered
-- **Launch & Migrate**: Secure AWS migration services for small businesses.
-- **Secure & Scale**: DevSecOps automation, compliance, and CI/CD pipelines.
-- **Operate & Optimize**: Managed AWS support, cost savings, and monitoring.
+Jutellane Solutions is a personal innovation platform built by Justine Longla to deliver powerful, modern web experiences using technologies like Next.js, Tailwind CSS, and Vercel.  
+This site serves as a foundation for modular development, scalable infrastructure, and creative problem solving through digital tools.
 
-## í»  Tech Stack
-- [Next.js](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- Deployed with [Vercel](https://vercel.com)
+---
 
-## í³¬ Contact
-- í³§ justinelongla@yahoo.com  
-- í´— [LinkedIn](https://linkedin.com/in/longlatjustine)
+## ğŸš€ Project Features
 
-## í³¦ Setup
+- âš¡ï¸ Built with **Next.js 15** and **React 19**
+- ğŸ¨ Styled using **Tailwind CSS 4**
+- ğŸ”§ Modern development tooling with **PostCSS** and **Autoprefixer**
+- ğŸŒ Deployed with **Vercel**, optimized for performance and CI/CD
+- âœ¨ Designed for clarity, speed, and scalability
 
-```bash
-git clone https://github.com/justine6/jutellane-homepage.git
-cd jutellane-homepage
-npm install
-npm run dev
-```
+---
 
-Visit  to view locally.
+## ğŸ“‚ Project Structure
+

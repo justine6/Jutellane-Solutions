@@ -1,21 +1,28 @@
 # Jutellane Solutions
 
-**Innovating with purpose. Deploying what matters.**
+Welcome to **Jutellane Solutions** — a modern web platform built with [Next.js](https://nextjs.org/) and styled using [Tailwind CSS](https://tailwindcss.com/).
 
-Jutellane Solutions is a personal innovation platform built by Justine Longla to deliver powerful, modern web experiences using technologies like Next.js, Tailwind CSS, and Vercel.  
-This site serves as a foundation for modular development, scalable infrastructure, and creative problem solving through digital tools.
+## 🚀 Project Overview
 
----
+This project serves as the official homepage and digital platform for the Jutellane initiative. It's designed with performance, accessibility, and modern user experience in mind.
 
-## 🚀 Project Features
+## 🛠️ Tech Stack
 
-- ⚡️ Built with **Next.js 15** and **React 19**
-- 🎨 Styled using **Tailwind CSS 4**
-- 🔧 Modern development tooling with **PostCSS** and **Autoprefixer**
-- 🌐 Deployed with **Vercel**, optimized for performance and CI/CD
-- ✨ Designed for clarity, speed, and scalability
+- **Framework:** Next.js 15
+- **Styling:** Tailwind CSS 4
+- **TypeScript:** Enabled
+- **Build Tooling:** PostCSS, Autoprefixer
+- **Hosting:** [Vercel](https://vercel.com)
 
----
+## 📁 Folder Structure
 
-## 📂 Project Structure
-
+```bash
+.
+├── app/                # Application routes & layout
+├── public/             # Static assets
+├── styles/ or globals/ # CSS globals (if separated)
+├── components/         # Reusable components (optional)
+├── tailwind.config.js  # Tailwind configuration
+├── postcss.config.js   # PostCSS plugins
+├── tsconfig.json       # TypeScript settings
+└── package.json        # Project metadata and scripts

@@ -24,16 +24,22 @@
 .DS_Store
 *.pem
 
-# debug
+# debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files (do NOT commit secrets)
+.env
+.env.* 
+!.env.example      # good for documenting expected variables
+.env.local         # specifically local dev secrets
+.env.development.local
+.env.test.local
+.env.production.local
 
-# vercel
+# vercel or deployment config
 .vercel
 
 # typescript

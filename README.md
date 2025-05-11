@@ -1,29 +1,86 @@
 # Jutellane Solutions
 
-Welcome to **Jutellane Solutions** — a modern web platform built with [Next.js](https://nextjs.org/) and styled using [Tailwind CSS](https://tailwindcss.com/).
+**Cloud Confidence. Delivered.**
 
-## 🚀 Project Overview
+Welcome to the official repository for the public-facing homepage of [jutellane.com](https://jutellane.com), designed and built to showcase secure, scalable AWS services, DevSecOps best practices, and modern cloud architecture by Justine Tekang.
 
-This project serves as the official homepage and digital platform for the Jutellane initiative. It's designed with performance, accessibility, and modern user experience in mind.
+---
 
-## 🛠️ Tech Stack
+## 🌐 Overview
 
-- **Framework:** Next.js 15
-- **Styling:** Tailwind CSS 4
-- **TypeScript:** Enabled
-- **Build Tooling:** PostCSS, Autoprefixer
-- **Hosting:** [Vercel](https://vercel.com)
+This project demonstrates:
 
-## 📁 Folder Structure
+* Full-stack deployment with **Next.js** on **Vercel**
+* Integration of a **custom domain** (`jutellane.com`)
+* Professional-grade **email setup** (`info@jutellane.com`)
+* Modular, responsive **landing page design**
+* Use of **Tailwind CSS** for UI styling
 
-```bash
-.
-├── app/                # Application routes & layout
-├── public/             # Static assets
-├── styles/ or globals/ # CSS globals (if separated)
-├── components/         # Reusable components (optional)
-├── tailwind.config.js  # Tailwind configuration
-├── postcss.config.js   # PostCSS plugins
-├── tsconfig.json       # TypeScript settings
-└── package.json        # Project metadata and scripts
-# redeploy trigger
+---
+
+## 🔐 Security & Configuration (Abstracted)
+
+> ⚠️ All sensitive credentials, architecture logic, and environment variables have been secured.
+
+* Configuration files like `.env.local`, `next.config.ts`, and auth credentials are **excluded via `.gitignore`**
+* Deployment targets, DNS settings, and Vercel-specific setup are **managed privately**
+
+---
+
+## 🚀 Live Demo
+
+Visit the live site:
+[https://jutellane.com](https://jutellane.com)
+
+---
+
+## 🛠️ Technologies Used
+
+* [Next.js](https://nextjs.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Vercel](https://vercel.com/)
+* [IONOS Email Hosting](https://ionos.com/)
+
+---
+
+## 💼 Services Highlighted
+
+* **Launch & Migrate** — AWS migration support
+* **Secure & Scale** — DevSecOps pipelines and automation
+* **Operate & Optimize** — Cost audits, 24/7 AWS operations
+
+---
+
+## 🧠 About the Developer
+
+Justine Tekang is a Certified DevSecOps & Cloud Automation Expert with:
+
+* 7+ years experience in cloud architecture
+* Specializations in healthcare, fintech, and e-commerce systems
+* Multilingual fluency: English, French, Dutch
+
+---
+
+## 📩 Contact
+
+For inquiries or consultations:
+
+* Email: [info@jutellane.com](mailto:info@jutellane.com)
+* LinkedIn: [longlatjustine](https://www.linkedin.com/in/longlatjustine)
+
+---
+
+## 📁 Repository Notes
+
+* `.env.local` and other private files are intentionally **excluded**
+* For deployment tips or setup, please contact directly
+
+---
+
+## 🤝 License
+
+This project is licensed for demonstration purposes only. Reach out for collaboration or deployment walkthroughs.
+
+---
+
+*Thank you for visiting the Jutellane Solutions project!*

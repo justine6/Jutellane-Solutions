@@ -26,3 +26,4 @@ This project serves as the official homepage and digital platform for the Jutell
 ├── postcss.config.js   # PostCSS plugins
 ├── tsconfig.json       # TypeScript settings
 └── package.json        # Project metadata and scripts
+# redeploy trigger

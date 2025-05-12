@@ -1,4 +1,6 @@
 # Jutellane Solutions
+🔗 **Live DevSecOps & Cloud Profile (HTML Showcase):**  
+View the HTML version of this profile here: [justine6-profile-readme.html](./justine6-profile-readme.html)
 
 **Cloud Confidence. Delivered.**
 

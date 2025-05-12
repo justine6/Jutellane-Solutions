@@ -90,32 +90,6 @@ export default function HomePage() {
         </section>
       </AnimatedSection>
 
-      {/* 🔷 Trusted By */}
-      <AnimatedSection>
-        <section className="max-w-4xl mx-auto text-center mb-16 px-2">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-6">Trusted By</h2>
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            {[
-              { src: '/logos/aws.png', alt: 'AWS' },
-              { src: '/logos/azure.png', alt: 'Azure' },
-              { src: '/logos/gcp.png', alt: 'Google Cloud' },
-              { src: '/logos/okta.png', alt: 'Okta' },
-            ].map(({ src, alt }) => (
-              <div key={alt} className="w-32 sm:w-40">
-                <Image
-                  src={src}
-                  alt={alt}
-                  width={160}
-                  height={60}
-                  className="object-contain mx-auto"
-                  placeholder="blur"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
-      </AnimatedSection>
-
       {/* 🔷 Contact */}
       <AnimatedSection>
         <section id="contact" className="max-w-2xl mx-auto text-center px-2">

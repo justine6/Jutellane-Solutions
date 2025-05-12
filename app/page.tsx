@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import AnimatedSection from '../components/AnimatedSection';
+import AnimatedSection from './components/AnimatedSection';
+
 
 export default function HomePage() {
   return (

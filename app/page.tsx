@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import AnimatedSection from '../components/AnimatedSection'; // ✅ Use relative path
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function HomePage() {
   return (

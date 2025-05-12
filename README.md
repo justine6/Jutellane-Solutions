@@ -1,6 +1,8 @@
+![Justine Tekang GitHub Banner](./justine6-banner.png)
 # Jutellane Solutions
 
-![cover](./jutellane-banner.png) <!-- Optional banner image -->
+![Justine Tekang GitHub Banner](./A_professional_digital_graphic_design_banner.png)
+
 
 > **Cloud Confidence. Delivered.**
 

@@ -1,35 +1,36 @@
 import './globals.css';
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Jutellane Solutions – Cloud Confidence Delivered',
+  title: 'Jutellane Solutions | Cloud Confidence. Delivered.',
   description:
-    'Secure, Scalable AWS Services with Justine Tekang — Certified DevSecOps & Cloud Automation Expert.',
-  icons: {
-    icon: '/favicon.ico',
-  },
+    'Secure, scalable AWS services with Justine Tekang — Certified DevSecOps & Cloud Automation Expert. Book a free assessment today.',
+  keywords: [
+    'AWS DevOps',
+    'Cloud Engineer',
+    'DevSecOps',
+    'Infrastructure as Code',
+    'Cloud Automation',
+    'Justine Tekang',
+    'Jutellane Solutions',
+    'CI/CD',
+    'Kubernetes',
+  ],
+  authors: [
+    { name: 'Justine Tekang', url: 'https://jutellane-solutions.vercel.app' },
+  ],
   openGraph: {
-    title: 'Jutellane Solutions',
+    title: 'Jutellane Solutions | Cloud Confidence. Delivered.',
     description:
-      'Cloud Confidence. Delivered. Explore secure DevSecOps and AWS automation services by Justine Tekang.',
-    url: 'https://jutellane-solutions-otbe.vercel.app', // or your custom domain
+      'Cloud and DevSecOps services powered by AWS. Start your secure cloud journey with Justine Tekang today.',
+    url: 'https://jutellane-solutions.vercel.app',
     siteName: 'Jutellane Solutions',
     images: [
       {
-        url: '/aws-banner.png',
+        url: 'https://jutellane-solutions.vercel.app/aws-banner.png',
         width: 1200,
         height: 630,
-        alt: 'Jutellane Banner',
+        alt: 'Jutellane Solutions Banner',
       },
     ],
     locale: 'en_US',
@@ -37,12 +38,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jutellane Solutions',
+    title: 'Jutellane Solutions | Cloud Confidence. Delivered.',
     description:
-      'Explore secure AWS cloud services, DevSecOps pipelines, and automation with Justine Tekang.',
-    images: ['/aws-banner.png'],
+      'Secure, scalable AWS services with Justine Tekang — Certified DevSecOps & Cloud Automation Expert.',
+    images: ['https://jutellane-solutions.vercel.app/aws-banner.png'],
+    creator: '@justinelongla', // update if you have a Twitter handle
   },
-  metadataBase: new URL('https://jutellane-solutions-otbe.vercel.app'),
 };
 
 export default function RootLayout({
@@ -52,9 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

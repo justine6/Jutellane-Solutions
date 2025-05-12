@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import AnimatedSection from './components/AnimatedSection';
+import TestimonialSlider from './components/TestimonialSlider';
 
 export default function HomePage() {
   return (
@@ -88,6 +89,11 @@ export default function HomePage() {
             <li>Proven success in healthcare, fintech, and e-commerce</li>
           </ul>
         </section>
+      </AnimatedSection>
+
+      {/* 🔷 Testimonials */}
+      <AnimatedSection>
+        <TestimonialSlider />
       </AnimatedSection>
 
       {/* 🔷 Contact */}

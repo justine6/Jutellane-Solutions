@@ -1,10 +1,17 @@
 # Jutellane Solutions
-🔗 **Live DevSecOps & Cloud Profile (HTML Showcase):**  
-View the HTML version of this profile here: [justine6-profile-readme.html](./justine6-profile-readme.html)
 
-**Cloud Confidence. Delivered.**
+![cover](./jutellane-banner.png) <!-- Optional banner image -->
+
+> **Cloud Confidence. Delivered.**
 
 Welcome to the official repository for the public-facing homepage of [jutellane.com](https://jutellane.com), designed and built to showcase secure, scalable AWS services, DevSecOps best practices, and modern cloud architecture by Justine Tekang.
+
+---
+
+### 🔗 HTML Profile Showcase
+
+🌐 **View my DevSecOps & Cloud Engineer profile as an HTML page:**  
+[📄 justine6-profile-readme.html](./justine6-profile-readme.html)
 
 ---
 
@@ -31,8 +38,8 @@ This project demonstrates:
 
 ## 🚀 Live Demo
 
-Visit the live site:
-[https://jutellane.com](https://jutellane.com)
+Visit the live site:  
+[🌍 https://jutellane.com](https://jutellane.com)
 
 ---
 
@@ -85,4 +92,4 @@ This project is licensed for demonstration purposes only. Reach out for collabor
 
 ---
 
-*Thank you for visiting the Jutellane Solutions project!*
+_Thank you for visiting the Jutellane Solutions project!_

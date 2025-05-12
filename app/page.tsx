@@ -1,6 +1,21 @@
+import Image from 'next/image';
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white text-gray-900 px-6 py-10">
+      {/* 🔷 Banner Section */}
+      <div className="mb-8">
+        <Image
+          src="/aws-banner.png"
+          alt="AWS DevSecOps Banner"
+          width={1280}
+          height={600}
+          className="rounded-xl shadow mx-auto"
+          priority
+        />
+      </div>
+
+      {/* 🔷 Header Section */}
       <section className="max-w-5xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Cloud Confidence. Delivered.
@@ -18,6 +33,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 🔷 Services Section */}
       <section className="max-w-5xl mx-auto mb-16">
         <h2 className="text-3xl font-semibold mb-8 text-center">My Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -39,6 +55,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 🔷 Why Work With Me */}
       <section className="max-w-3xl mx-auto text-center mb-16">
         <h2 className="text-3xl font-semibold mb-4">Why Work With Me?</h2>
         <ul className="list-disc list-inside text-left">
@@ -49,6 +66,7 @@ export default function HomePage() {
         </ul>
       </section>
 
+      {/* 🔷 Contact */}
       <section id="contact" className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-semibold mb-4">Get In Touch</h2>
         <p>Email: <a href="mailto:justinelongla@yahoo.com" className="text-blue-600">justinelongla@yahoo.com</a></p>

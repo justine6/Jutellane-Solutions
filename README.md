@@ -2,9 +2,6 @@
 
 # Jutellane Solutions
 
-![Justine Tekang GitHub Banner](./A_professional_digital_graphic_design_banner.png)
-
-
 > **Cloud Confidence. Delivered.**
 
 Welcome to the official repository for the public-facing homepage of [jutellane.com](https://jutellane.com), designed and built to showcase secure, scalable AWS services, DevSecOps best practices, and modern cloud architecture by Justine Tekang.

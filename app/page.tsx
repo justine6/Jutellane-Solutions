@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import AnimatedSection from './components/AnimatedSection';
 import TestimonialSlider from './components/TestimonialSlider';
+import NewsletterSignup from './components/NewsletterSignup';
 
 export default function HomePage() {
   return (
@@ -120,7 +121,7 @@ export default function HomePage() {
         </section>
       </AnimatedSection>
 
-      {/* 🔷 Blog & Newsletter Section */}
+      {/* 🔷 Blog & Newsletter */}
       <AnimatedSection>
         <section id="blog" className="scroll-mt-20 max-w-3xl mx-auto text-center px-4 mb-16">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Stay Updated</h2>
@@ -128,12 +129,9 @@ export default function HomePage() {
             🚧 Our blog and newsletter are coming soon! You’ll soon be able to explore in-depth insights,
             DevSecOps tips, and cloud automation tutorials curated by Justine Tekang.
           </p>
-          <button
-            disabled
-            className="px-6 py-3 rounded-lg bg-blue-200 text-blue-800 font-medium cursor-not-allowed"
-          >
-            Notify Me (Coming Soon)
-          </button>
+
+          {/* Newsletter Signup */}
+          <NewsletterSignup />
         </section>
       </AnimatedSection>
     </main>

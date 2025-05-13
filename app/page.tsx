@@ -119,6 +119,23 @@ export default function HomePage() {
           </div>
         </section>
       </AnimatedSection>
+
+      {/* 🔷 Blog & Newsletter Section */}
+      <AnimatedSection>
+        <section id="blog" className="scroll-mt-20 max-w-3xl mx-auto text-center px-4 mb-16">
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Stay Updated</h2>
+          <p className="text-base sm:text-lg text-gray-700 mb-6">
+            🚧 Our blog and newsletter are coming soon! You’ll soon be able to explore in-depth insights,
+            DevSecOps tips, and cloud automation tutorials curated by Justine Tekang.
+          </p>
+          <button
+            disabled
+            className="px-6 py-3 rounded-lg bg-blue-200 text-blue-800 font-medium cursor-not-allowed"
+          >
+            Notify Me (Coming Soon)
+          </button>
+        </section>
+      </AnimatedSection>
     </main>
   );
 }

@@ -4,7 +4,7 @@ import TestimonialSlider from './components/TestimonialSlider';
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white text-gray-900 px-4 sm:px-6 py-8 sm:py-10">
+    <main className="min-h-screen bg-white text-gray-900 px-4 sm:px-6 py-8 sm:py-10 scroll-smooth">
       {/* 🔷 Banner Section */}
       <AnimatedSection>
         <div className="mb-8">
@@ -48,7 +48,7 @@ export default function HomePage() {
 
       {/* 🔷 Services Section */}
       <AnimatedSection>
-        <section id="services" className="max-w-5xl mx-auto mb-16 px-2">
+        <section id="services" className="max-w-5xl mx-auto mb-16 px-2 scroll-mt-24">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">My Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {[
@@ -91,34 +91,28 @@ export default function HomePage() {
         </section>
       </AnimatedSection>
 
-      {/* 🔷 Testimonials Section */}
+      {/* 🔷 Testimonials */}
       <AnimatedSection>
-        <section id="testimonials" className="max-w-3xl mx-auto px-4 mb-16">
+        <section id="testimonials" className="max-w-3xl mx-auto px-4 mb-16 scroll-mt-24">
           <TestimonialSlider />
         </section>
       </AnimatedSection>
 
-      {/* 🔷 Contact Section */}
+      {/* 🔷 Contact */}
       <AnimatedSection>
-        <section id="contact" className="max-w-2xl mx-auto text-center px-2">
+        <section id="contact" className="max-w-2xl mx-auto text-center px-2 scroll-mt-24">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Get In Touch</h2>
           <div className="space-y-2 text-sm sm:text-base">
             <p>
               Email:{' '}
-              <a
-                href="mailto:justinelongla@yahoo.com"
-                className="text-blue-600 break-all"
-              >
+              <a href="mailto:justinelongla@yahoo.com" className="text-blue-600 break-all">
                 justinelongla@yahoo.com
               </a>
             </p>
             <p>Phone: +1 405.934.5864</p>
             <p>
               LinkedIn:{' '}
-              <a
-                href="https://www.linkedin.com/in/longlatjustine"
-                className="text-blue-600"
-              >
+              <a href="https://www.linkedin.com/in/longlatjustine" className="text-blue-600">
                 longlatjustine
               </a>
             </p>

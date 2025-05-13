@@ -1,50 +1,61 @@
 'use client';
 
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    const updateScrollProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', updateScrollProgress);
+    return () => window.removeEventListener('scroll', updateScrollProgress);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold text-blue-700">
-          Jutellane Solutions
-        </Link>
+    <>
+      {/* Scroll Progress Indicator */}
+      <div className="fixed top-0 left-0 h-1 bg-blue-600 z-50" style={{ width: `${scrollProgress}%` }} />
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex space-x-6 text-sm font-medium text-gray-700">
-          <li>
-            <a href="#services" className="hover:text-blue-600 transition">Services</a>
-          </li>
-          <li>
-            <a href="#testimonials" className="hover:text-blue-600 transition">Testimonials</a>
-          </li>
-          <li>
-            <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
-          </li>
-        </ul>
+      {/* Navbar */}
+      <nav className="bg-white shadow sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+          <Link href="/" className="text-xl font-bold text-gray-800">
+            Jutellane Solutions
+          </Link>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden text-gray-700"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </nav>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-6 text-gray-700 text-sm">
+            <Link href="#services" className="hover:text-blue-600">Services</Link>
+            <Link href="#testimonials" className="hover:text-blue-600">Testimonials</Link>
+            <Link href="#contact" className="hover:text-blue-600">Contact</Link>
+          </div>
 
-      {/* Mobile Dropdown */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-4 py-2 space-y-2">
-          <a href="#services" className="block text-gray-700 hover:text-blue-600">Services</a>
-          <a href="#testimonials" className="block text-gray-700 hover:text-blue-600">Testimonials</a>
-          <a href="#contact" className="block text-gray-700 hover:text-blue-600">Contact</a>
+          {/* Mobile Toggle */}
+          <button onClick={toggleMenu} className="md:hidden text-gray-700 focus:outline-none">
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-      )}
-    </header>
+
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="md:hidden bg-white border-t px-4 pb-4 space-y-3 text-sm text-gray-700">
+            <Link href="#services" onClick={toggleMenu} className="block hover:text-blue-600">Services</Link>
+            <Link href="#testimonials" onClick={toggleMenu} className="block hover:text-blue-600">Testimonials</Link>
+            <Link href="#contact" onClick={toggleMenu} className="block hover:text-blue-600">Contact</Link>
+          </div>
+        )}
+      </nav>
+    </>
   );
 }

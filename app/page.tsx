@@ -48,7 +48,7 @@ export default function HomePage() {
 
       {/* 🔷 Services Section */}
       <AnimatedSection>
-        <section className="max-w-5xl mx-auto mb-16 px-2">
+        <section id="services" className="max-w-5xl mx-auto mb-16 px-2">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">My Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {[
@@ -91,12 +91,14 @@ export default function HomePage() {
         </section>
       </AnimatedSection>
 
-      {/* 🔷 Testimonials */}
+      {/* 🔷 Testimonials Section */}
       <AnimatedSection>
-        <TestimonialSlider />
+        <section id="testimonials" className="max-w-3xl mx-auto px-4 mb-16">
+          <TestimonialSlider />
+        </section>
       </AnimatedSection>
 
-      {/* 🔷 Contact */}
+      {/* 🔷 Contact Section */}
       <AnimatedSection>
         <section id="contact" className="max-w-2xl mx-auto text-center px-2">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Get In Touch</h2>

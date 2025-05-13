@@ -1,95 +1,72 @@
-![Justine Tekang GitHub Banner](https://raw.githubusercontent.com/justine6/justine6/main/justine6-banner.png)
+# 🌐 Jutellane Solutions
 
-# Jutellane Solutions
+> **Cloud Confidence. Delivered.**  
+> Secure, Scalable AWS Services with Justine Tekang — Certified DevSecOps & Cloud Automation Expert
 
-> **Cloud Confidence. Delivered.**
-
-Welcome to the official repository for the public-facing homepage of [jutellane.com](https://jutellane.com), designed and built to showcase secure, scalable AWS services, DevSecOps best practices, and modern cloud architecture by Justine Tekang.
-
----
-
-### 🔗 HTML Profile Showcase
-
-🌐 **View my DevSecOps & Cloud Engineer profile as an HTML page:**  
-[📄 justine6-profile-readme.html](./justine6-profile-readme.html)
+[![Vercel Deployment](https://vercel.com/button)](https://jutellane-solutions.vercel.app)
 
 ---
 
-## 🌐 Overview
+## 🚀 Overview
 
-This project demonstrates:
+Jutellane Solutions is a sleek, responsive landing page built with **Next.js 15**, **Tailwind CSS**, and modern best practices. It showcases DevSecOps services offered by Justine Tekang, emphasizing trust, performance, and automation.
 
-* Full-stack deployment with **Next.js** on **Vercel**
-* Integration of a **custom domain** (`jutellane.com`)
-* Professional-grade **email setup** (`info@jutellane.com`)
-* Modular, responsive **landing page design**
-* Use of **Tailwind CSS** for UI styling
+### ✨ Features
 
----
-
-## 🔐 Security & Configuration (Abstracted)
-
-> ⚠️ All sensitive credentials, architecture logic, and environment variables have been secured.
-
-* Configuration files like `.env.local`, `next.config.ts`, and auth credentials are **excluded via `.gitignore`**
-* Deployment targets, DNS settings, and Vercel-specific setup are **managed privately**
+- 🧭 **Sticky Navbar** with scroll spy highlighting
+- 🎯 **Smooth scrolling** with active section tracking
+- ⚡ **Responsive Hero Image** with mobile tuning (`sizes` + `priority`)
+- 💬 **Testimonial Slider** using Swiper.js
+- 💡 **Animated Sections** with entrance transitions
+- 🔝 **Back-to-Top Button**
+- 📱 **Mobile-first design**
+- 📌 **Semantic section IDs** for anchor navigation
+- 📄 **SEO Meta + OpenGraph Tags**
+- 🔒 **Accessible, keyboard-navigable structure**
 
 ---
 
-## 🚀 Live Demo
+## 📁 Project Structure
 
-Visit the live site:  
-[🌍 https://jutellane.com](https://jutellane.com)
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Built With
 
-* [Next.js](https://nextjs.org/)
-* [Tailwind CSS](https://tailwindcss.com/)
-* [Vercel](https://vercel.com/)
-* [IONOS Email Hosting](https://ionos.com/)
-
----
-
-## 💼 Services Highlighted
-
-* **Launch & Migrate** — AWS migration support
-* **Secure & Scale** — DevSecOps pipelines and automation
-* **Operate & Optimize** — Cost audits, 24/7 AWS operations
+- [Next.js 15](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Swiper.js](https://swiperjs.com/) – Testimonial slider
+- [Vercel](https://vercel.com/) – Deployment platform
 
 ---
 
-## 🧠 About the Developer
+## 📦 Getting Started (Dev)
 
-Justine Tekang is a Certified DevSecOps & Cloud Automation Expert with:
+```bash
+# Clone this repo
+git clone https://github.com/justine6/Jutellane-Solutions.git
+cd Jutellane-Solutions
 
-* 7+ years experience in cloud architecture
-* Specializations in healthcare, fintech, and e-commerce systems
-* Multilingual fluency: English, French, Dutch
+# Install dependencies
+npm install
 
----
+# Run locally
+npm run dev
+🌍 Deployment
+This project is automatically deployed with Vercel on every push to the main branch.
 
-## 📩 Contact
+🔗 Live Demo: jutellane-solutions.vercel.app
 
-For inquiries or consultations:
+👤 Author
+Fnu Longla Justine Tekang
+Certified DevSecOps | AWS & Azure | Cloud Automation
+📧 justinelongla@yahoo.com
+🔗 LinkedIn
 
-* Email: [info@jutellane.com](mailto:info@jutellane.com)
-* LinkedIn: [longlatjustine](https://www.linkedin.com/in/longlatjustine)
+👤 Author
+Fnu Longla Justine Tekang
+Certified DevSecOps | AWS & Azure | Cloud Automation
+📧 justinelongla@yahoo.com
+🔗 LinkedIn
 
----
-
-## 📁 Repository Notes
-
-* `.env.local` and other private files are intentionally **excluded**
-* For deployment tips or setup, please contact directly
-
----
-
-## 🤝 License
-
-This project is licensed for demonstration purposes only. Reach out for collaboration or deployment walkthroughs.
-
----
-
-_Thank you for visiting the Jutellane Solutions project!_

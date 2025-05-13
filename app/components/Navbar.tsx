@@ -1,61 +1,61 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+
+const sections = ['services', 'testimonials', 'contact'];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
-    const updateScrollProgress = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
-      setScrollProgress(progress);
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.6,
+      }
+    );
 
-    window.addEventListener('scroll', updateScrollProgress);
-    return () => window.removeEventListener('scroll', updateScrollProgress);
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.unobserve(el);
+      });
+    };
   }, []);
 
   return (
-    <>
-      {/* Scroll Progress Indicator */}
-      <div className="fixed top-0 left-0 h-1 bg-blue-600 z-50" style={{ width: `${scrollProgress}%` }} />
-
-      {/* Navbar */}
-      <nav className="bg-white shadow sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-gray-800">
-            Jutellane Solutions
-          </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6 text-gray-700 text-sm">
-            <Link href="#services" className="hover:text-blue-600">Services</Link>
-            <Link href="#testimonials" className="hover:text-blue-600">Testimonials</Link>
-            <Link href="#contact" className="hover:text-blue-600">Contact</Link>
-          </div>
-
-          {/* Mobile Toggle */}
-          <button onClick={toggleMenu} className="md:hidden text-gray-700 focus:outline-none">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden bg-white border-t px-4 pb-4 space-y-3 text-sm text-gray-700">
-            <Link href="#services" onClick={toggleMenu} className="block hover:text-blue-600">Services</Link>
-            <Link href="#testimonials" onClick={toggleMenu} className="block hover:text-blue-600">Testimonials</Link>
-            <Link href="#contact" onClick={toggleMenu} className="block hover:text-blue-600">Contact</Link>
-          </div>
-        )}
+    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
+      <nav className="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
+        <Link href="/" className="font-bold text-lg">
+          Jutellane Solutions
+        </Link>
+        <ul className="flex gap-6 text-sm sm:text-base">
+          {sections.map((id) => (
+            <li key={id}>
+              <a
+                href={`#${id}`}
+                className={`hover:text-blue-600 ${
+                  activeSection === id ? 'text-blue-600 font-semibold underline' : ''
+                }`}
+              >
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </a>
+            </li>
+          ))}
+        </ul>
       </nav>
-    </>
+    </header>
   );
 }

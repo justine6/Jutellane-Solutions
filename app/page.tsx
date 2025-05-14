@@ -106,8 +106,8 @@ export default function HomePage() {
           <div className="space-y-2 text-sm sm:text-base">
             <p>
               Email:{' '}
-              <a href="mailto:justinelongla@yahoo.com" className="text-blue-600 break-all">
-                justinelongla@yahoo.com
+              <a href="mailto:info@jutellane.com" className="text-blue-600 break-all">
+                info@jutellane.com
               </a>
             </p>
             <p>Phone: +1 405.934.5864</p>
@@ -119,21 +119,27 @@ export default function HomePage() {
             </p>
           </div>
         </section>
-      </AnimatedSection>
-
-      {/* 🔷 Blog & Newsletter */}
-      <AnimatedSection>
-        <section id="blog" className="scroll-mt-20 max-w-3xl mx-auto text-center px-4 mb-16">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Stay Updated</h2>
-          <p className="text-base sm:text-lg text-gray-700 mb-6">
-            🚧 Our blog and newsletter are coming soon! You’ll soon be able to explore in-depth insights,
-            DevSecOps tips, and cloud automation tutorials curated by Justine Tekang.
-          </p>
-
-          {/* Newsletter Signup */}
-          <NewsletterSignup />
-        </section>
-      </AnimatedSection>
+{/* 🔷 Contact Section */}
+<AnimatedSection>
+  <section id="contact" className="max-w-2xl mx-auto text-center px-2 scroll-mt-24">
+    <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Get In Touch</h2>
+    <div className="space-y-2 text-sm sm:text-base">
+      <p>
+        Email:{' '}
+        <a href="mailto:info@jutellane.com" className="text-blue-600 break-all">
+          info@jutellane.com
+        </a>
+      </p>
+      <p>Phone: +1 405.934.5864</p>
+      <p>
+        LinkedIn:{' '}
+        <a href="https://www.linkedin.com/in/longlatjustine" className="text-blue-600">
+          longlatjustine
+        </a>
+      </p>
+    </div>
+  </section>
+</AnimatedSection>
     </main>
   );
 }

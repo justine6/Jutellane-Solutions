@@ -6,6 +6,7 @@ import NewsletterSignup from './components/NewsletterSignup';
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white text-gray-900 px-4 sm:px-6 py-8 sm:py-10 scroll-smooth">
+
       {/* 🔷 Banner Section */}
       <AnimatedSection>
         <div className="mb-8">
@@ -119,27 +120,20 @@ export default function HomePage() {
             </p>
           </div>
         </section>
-{/* 🔷 Contact Section */}
-<AnimatedSection>
-  <section id="contact" className="max-w-2xl mx-auto text-center px-2 scroll-mt-24">
-    <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Get In Touch</h2>
-    <div className="space-y-2 text-sm sm:text-base">
-      <p>
-        Email:{' '}
-        <a href="mailto:info@jutellane.com" className="text-blue-600 break-all">
-          info@jutellane.com
-        </a>
-      </p>
-      <p>Phone: +1 405.934.5864</p>
-      <p>
-        LinkedIn:{' '}
-        <a href="https://www.linkedin.com/in/longlatjustine" className="text-blue-600">
-          longlatjustine
-        </a>
-      </p>
-    </div>
-  </section>
-</AnimatedSection>
+      </AnimatedSection>
+
+      {/* 🔷 Blog & Newsletter */}
+      <AnimatedSection>
+        <section id="blog" className="scroll-mt-20 max-w-3xl mx-auto text-center px-4 mb-16">
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Stay Updated</h2>
+          <p className="text-base sm:text-lg text-gray-700 mb-6">
+            🚧 Our blog and newsletter are coming soon! You’ll soon be able to explore in-depth insights,
+            DevSecOps tips, and cloud automation tutorials curated by Justine Tekang.
+          </p>
+          <NewsletterSignup />
+        </section>
+      </AnimatedSection>
+      
     </main>
   );
 }

@@ -13,18 +13,18 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    name: 'Sarah L.',
-    role: 'CTO, MedTech Corp',
+    name: 'Aliyu Ntah Yeh',
+    role: 'CTO, Haiti 2075 project',
     quote: 'Justine transformed our AWS infrastructure with security and automation. Highly recommended!',
   },
   {
-    name: 'Marcus F.',
-    role: 'Founder, FinOptic',
+    name: 'Mba Gabriel',
+    role: 'CEO, Masanga group',
     quote: 'Our deployment pipeline is now 5x faster thanks to Justine’s DevSecOps expertise.',
   },
   {
-    name: 'Elena G.',
-    role: 'Product Manager, EcomNow',
+    name: 'Trevor Young',
+    role: 'Product Manager, masanga group',
     quote: 'We sleep better knowing Justine’s monitoring and cost optimization are in place.',
   },
 ];

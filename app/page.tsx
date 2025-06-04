@@ -99,6 +99,53 @@ export default function HomePage() {
           <TestimonialSlider />
         </section>
       </AnimatedSection>
+      {/* 🔷 Certifications & Expertise */}
+<AnimatedSection>
+  <section id="certifications" className="max-w-5xl mx-auto text-center px-4 mb-16 scroll-mt-24">
+    <h2 className="text-2xl sm:text-3xl font-semibold mb-6">Certifications & Expertise</h2>
+    <p className="text-base sm:text-lg text-gray-700 mb-10">
+      AWS and Microsoft certifications that back every architecture decision and automation pipeline I deliver.
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* AWS Certification */}
+      <div className="border p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <img
+          src="https://images.credly.com/size/340x340/images/6840cb1c-2957-4d8f-82f8-8b9832128b3c/image.png"
+          alt="AWS Certified Solutions Architect"
+          className="w-24 h-24 mx-auto mb-4"
+        />
+        <h3 className="text-xl font-semibold">AWS Certified Solutions Architect – Associate</h3>
+        <a
+          href="https://www.credly.com/badges/04c47a15-71b1-48db-a5bc-48b427b521e3/linked_in"
+          target="_blank"
+          className="text-blue-600 hover:underline inline-block mt-2"
+        >
+          View Credential
+        </a>
+      </div>
+
+      {/* Microsoft Certifications */}
+      <div className="border p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <img
+          src="https://learn.microsoft.com/favicon.ico"
+          alt="Microsoft Certifications"
+          className="w-12 h-12 mx-auto mb-4"
+        />
+        <h3 className="text-xl font-semibold">Microsoft Azure & Power Platform</h3>
+        <p className="text-gray-500">DevOps, AI Engineer, Power BI Analyst</p>
+        <a
+          href="https://learn.microsoft.com/en-us/users/fnulonglajustinetekang-3036/credentials"
+          target="_blank"
+          className="text-blue-600 hover:underline inline-block mt-2"
+        >
+          View Credentials
+        </a>
+      </div>
+    </div>
+  </section>
+</AnimatedSection>
+
 
       {/* 🔷 Contact */}
       <AnimatedSection>

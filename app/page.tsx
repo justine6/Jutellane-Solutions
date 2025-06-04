@@ -107,23 +107,41 @@ export default function HomePage() {
       AWS and Microsoft certifications that back every architecture decision and automation pipeline I deliver.
     </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {/* AWS Certification */}
-      <div className="border p-6 rounded-2xl shadow hover:shadow-lg transition">
-        <img
-          src="https://images.credly.com/size/340x340/images/6840cb1c-2957-4d8f-82f8-8b9832128b3c/image.png"
-          alt="AWS Certified Solutions Architect"
-          className="w-24 h-24 mx-auto mb-4"
-        />
-        <h3 className="text-xl font-semibold">AWS Certified Solutions Architect – Associate</h3>
-        <a
-          href="https://www.credly.com/badges/04c47a15-71b1-48db-a5bc-48b427b521e3/linked_in"
-          target="_blank"
-          className="text-blue-600 hover:underline inline-block mt-2"
-        >
-          View Credential
-        </a>
-      </div>
+{/* AWS Professional Certifications */}
+<div className="border p-6 rounded-2xl shadow hover:shadow-lg transition">
+  <img
+    src="https://images.credly.com/size/340x340/images/8eabc23f-9f49-4b01-9c17-2f156b16606a/image.png"
+    alt="AWS Certified Solutions Architect – Professional"
+    className="w-24 h-24 mx-auto mb-4"
+  />
+  <h3 className="text-xl font-semibold mb-2">AWS Certified Solutions Architect – Professional</h3>
+  <p className="text-gray-500 mb-2">Advanced expertise in designing distributed applications and enterprise-scale solutions on AWS.</p>
+  <a
+    href="https://www.credly.com/badges" // Replace with your public badge link if available
+    target="_blank"
+    className="text-blue-600 hover:underline inline-block mt-2"
+  >
+    View Credential
+  </a>
+</div>
+
+<div className="border p-6 rounded-2xl shadow hover:shadow-lg transition">
+  <img
+    src="https://images.credly.com/size/340x340/images/2e0b2202-0a7f-47b1-8131-7f7b36b2febe/image.png"
+    alt="AWS Certified DevOps Engineer – Professional"
+    className="w-24 h-24 mx-auto mb-4"
+  />
+  <h3 className="text-xl font-semibold mb-2">AWS Certified DevOps Engineer – Professional</h3>
+  <p className="text-gray-500 mb-2">Expertise in automating deployments, securing CI/CD pipelines, and managing scalable operations on AWS.</p>
+  <a
+    href="https://www.credly.com/badges" // Replace with your actual badge URL
+    target="_blank"
+    className="text-blue-600 hover:underline inline-block mt-2"
+  >
+    View Credential
+  </a>
+</div>
+
 
       {/* Microsoft Certifications */}
       <div className="border p-6 rounded-2xl shadow hover:shadow-lg transition">

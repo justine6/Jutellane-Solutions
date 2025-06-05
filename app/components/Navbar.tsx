@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Scrollspy from 'react-scrollspy';
-import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { useState } from "react";
+import Scrollspy from "react-scrollspy";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-8">
           <Scrollspy
-            items={['services', 'testimonials', 'contact']}
+            items={["services", "testimonials", "contact"]}
             currentClassName="text-blue-600 font-semibold underline"
             offset={-100}
             componentTag="div"
@@ -29,7 +29,10 @@ export default function Navbar() {
             <a href="#services" className="text-gray-700 hover:text-blue-600">
               Services
             </a>
-            <a href="#testimonials" className="text-gray-700 hover:text-blue-600">
+            <a
+              href="#testimonials"
+              className="text-gray-700 hover:text-blue-600"
+            >
               Testimonials
             </a>
             <a href="#contact" className="text-gray-700 hover:text-blue-600">
@@ -48,7 +51,7 @@ export default function Navbar() {
       {isOpen && (
         <nav className="md:hidden bg-white shadow px-4 py-4">
           <Scrollspy
-            items={['services', 'testimonials', 'contact']}
+            items={["services", "testimonials", "contact"]}
             currentClassName="text-blue-600 font-semibold underline"
             offset={-100}
             componentTag="div"

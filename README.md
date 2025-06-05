@@ -28,7 +28,6 @@ Jutellane Solutions is a sleek, responsive landing page built with **Next.js 15*
 
 ## 📁 Project Structure
 
-
 ---
 
 ## 🛠️ Built With
@@ -70,3 +69,4 @@ Certified DevSecOps | AWS & Azure | Cloud Automation
 📧 justinelongla@yahoo.com
 🔗 LinkedIn
 
+```

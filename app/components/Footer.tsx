@@ -1,9 +1,12 @@
-'use client';
+"use client";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t mt-16 py-6 text-center text-sm text-gray-600 animate-fadeInUp">
-      <p>&copy; {new Date().getFullYear()} Jutellane Solutions. All rights reserved.</p>
+      <p>
+        &copy; {new Date().getFullYear()} Jutellane Solutions. All rights
+        reserved.
+      </p>
       <div className="mt-2 space-x-2">
         <a
           href="mailto:justinelongla@yahoo.com"

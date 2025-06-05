@@ -1,10 +1,10 @@
 // app/components/NewsletterSignup.tsx
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function NewsletterSignup() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -28,7 +28,7 @@ export default function NewsletterSignup() {
         type="submit"
         className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition"
       >
-        {submitted ? 'Thank you!' : 'Sign Up for Updates'}
+        {submitted ? "Thank you!" : "Sign Up for Updates"}
       </button>
     </form>
   );

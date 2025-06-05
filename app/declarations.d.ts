@@ -1,4 +1,4 @@
-declare module 'react-scrollspy' {
+declare module "react-scrollspy" {
   const Scrollspy: any;
   export default Scrollspy;
 }

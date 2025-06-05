@@ -3,14 +3,15 @@ name: 🚀 Deploy to Vercel on Push
 on:
   push:
     branches:
-      - master  # Or main if your default branch is 'main'
+      - master  # Change to 'main' if your default branch is main
 
 jobs:
   trigger-vercel-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: 🔁 Call Vercel Deploy Hook
         env:
           DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
         run: |
-          curl -X POST "$DEPLOY_HOOK"
+          curl -s -X POST "$DEPLOY_HOOK"

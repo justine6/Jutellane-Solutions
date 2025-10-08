@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global overrides */
+:root {
+  scroll-padding-top: 5rem; /* Ensures sticky nav doesn’t hide anchor targets */
+}
+
+html, body {
+  @apply bg-white text-gray-900 antialiased;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make sure the navbar and footer spacing works nicely */
+main {
+  min-height: calc(100vh - 8rem); /* Adjust depending on Navbar/Footer height */
+}

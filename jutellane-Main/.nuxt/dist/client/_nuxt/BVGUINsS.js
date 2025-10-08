@@ -1,0 +1,1 @@
+import{_ as n}from"./DlAUqK2U.js";import{c as r,o as s,t as c}from"#entry";const i={props:["title"],data:()=>({})};function a(o,t,e,p,_,l){return s(),r("button",{onClick:t[0]||(t[0]=m=>o.$emit("click"))},c(e.title),1)}const $=n(i,[["render",a]]);export{$ as _};

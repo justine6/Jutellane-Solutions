@@ -1,0 +1,1 @@
+import{f as e}from"./DUPvMiqD.js";import{_ as o}from"./DlAUqK2U.js";import{c as t,o as r}from"#entry";const a={name:"About",scrollToTop:!0,mounted(){e.replace()},updated(){e.replace()}};function c(p,s,n,f,m,u){return r(),t("div")}const i=o(a,[["render",c]]);export{i as default};

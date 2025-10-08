@@ -1,4 +1,33 @@
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "@types/node"
+    ],
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    ".nuxt/../**/*",
+    ".nuxt/../.config/nuxt.*",
+    ".nuxt/./nuxt.d.ts",
+    ".nuxt/../../../../node_modules/.pnpm/@nuxtjs+tailwindcss@6.14.0_magicast@0.3.5/node_modules/runtime",
+    ".nuxt/../../../../node_modules/.pnpm/@nuxtjs+tailwindcss@6.14.0_magicast@0.3.5/node_modules/dist/runtime",
+    ".nuxt/../../../../node_modules/.pnpm/@nuxtjs+color-mode@3.5.2_magicast@0.3.5/node_modules/runtime",
+    ".nuxt/../../../../node_modules/.pnpm/@nuxtjs+color-mode@3.5.2_magicast@0.3.5/node_modules/dist/runtime",
+    ".nuxt/../../../../node_modules/.pnpm/@nuxt+devtools@2.6.3_vite@7_94b2d6f55c4caed0e1363da138bf84c2/node_modules/runtime",
+    ".nuxt/../../../../node_modules/.pnpm/@nuxt+devtools@2.6.3_vite@7_94b2d6f55c4caed0e1363da138bf84c2/node_modules/dist/runtime",
+    ".nuxt/../../../../node_modules/.pnpm/@nuxt+telemetry@2.6.6_magicast@0.3.5/node_modules/runtime",
+    ".nuxt/../../../../node_modules/.pnpm/@nuxt+telemetry@2.6.6_magicast@0.3.5/node_modules/dist/runtime",
+    ".nuxt/..",
+    ".nuxt/../../../../node_modules/.pnpm/nuxt@3.19.1_@parcel+watcher_b2826bf653b4ea302dcdc389c3480be6/node_modules/nuxt/dist/app",
+    ".nuxt/../../../../node_modules/.pnpm/nuxt@3.19.1_@parcel+watcher_b2826bf653b4ea302dcdc389c3480be6/node_modules/nuxt/dist/app/compat/vue-demi",
+    ".nuxt/../../../../node_modules/.pnpm/vue-router@4.5.1_vue@3.5.21/node_modules/vue-router/dist/vue-router.node",
+    ".nuxt/../../../../node_modules/.pnpm/nuxt@3.19.1_@parcel+watcher_b2826bf653b4ea302dcdc389c3480be6/node_modules/nuxt/dist/head/runtime/composables/v3",
+    ".next/types/**/*.ts"
+  ]
 }

@@ -1,16 +1,12 @@
-/** @type {import('tailwindcss').Config} */
 import type { Config } from 'tailwindcss'
 
-export default <Partial<Config>> {
-  darkMode: 'class',
-  content: [],
+const config: Config = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
+  ],
   theme: {
     extend: {
-      fontFamily:{
-        'sans': ['Poppins'],
-        'display': ['Poppins'],
-        'body': ['Poppins'],
-      },
       colors: {
         "primary-light": "#F7F8FC",
         "secondary-light": "#FFFFFF",
@@ -39,3 +35,4 @@ export default <Partial<Config>> {
   plugins: [],
 }
 
+export default config

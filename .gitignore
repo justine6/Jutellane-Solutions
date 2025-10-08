@@ -1,11 +1,26 @@
+<<<<<<< HEAD
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
+=======
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+>>>>>>> e6eaef050ce74e079fbe6f421a5e1928fc1a230e
 
 # testing
 /coverage
 
+<<<<<<< HEAD
 # production
 /.next
 /out
@@ -13,10 +28,35 @@
 # misc
 .DS_Store
 .env.local
+=======
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (do NOT commit secrets)
+.env
+.env.* 
+!.env.example      # good for documenting expected variables
+.env.local         # specifically local dev secrets
+>>>>>>> e6eaef050ce74e079fbe6f421a5e1928fc1a230e
 .env.development.local
 .env.test.local
 .env.production.local
 
+<<<<<<< HEAD
 # logs
 npm-debug.log*
 yarn-debug.log*
@@ -26,3 +66,11 @@ pnpm-debug.log*
 # editor settings
 .vscode
 .idea
+=======
+# vercel or deployment config
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+>>>>>>> e6eaef050ce74e079fbe6f421a5e1928fc1a230e

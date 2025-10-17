@@ -1,17 +1,16 @@
 # scripts/watch-media.ps1
 # Watches Downloads for .mp3/.mp4 and moves them into /public/sounds or /public/videos
 # Logs actions daily → scripts/logs/watch-YYYY-MM-DD.log
-# Auto-cleans logs older than N days (configurable)
-# Rotates logs if size exceeds max threshold (configurable)
+# Auto-cleans logs older than N days and rotates logs if size exceeds max threshold
 
 # 🔧 Config
-$logRetentionDays = 7   # Number of days to keep logs
-$maxLogSizeMB = 5       # Maximum log size in MB before rotation
-$downloads = [Environment]::GetFolderPath("UserProfile") + "\Downloads"
-$sounds = "$PSScriptRoot\..\public\sounds"
-$videos = "$PSScriptRoot\..\public\videos"
-$thumbnails = "$videos\thumbnails"
-$logDir = "$PSScriptRoot\logs"
+$logRetentionDays = 7   # Keep logs N days
+$maxLogSizeMB = 5       # Rotate if log exceeds N MB
+$downloads   = [Environment]::GetFolderPath("UserProfile") + "\Downloads"
+$sounds      = "$PSScriptRoot\..\public\sounds"
+$videos      = "$PSScriptRoot\..\public\videos"
+$thumbnails  = "$videos\thumbnails"
+$logDir      = "$PSScriptRoot\logs"
 
 # Ensure target folders exist
 foreach ($folder in @($sounds, $videos, $thumbnails, $logDir)) {
@@ -38,16 +37,16 @@ function Rotate-LogIfNeeded {
     }
 }
 
-function Write-Log($msg) {
+function Write-Log($context, $msg, $level="INFO") {
     Rotate-LogIfNeeded
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    $entry = "[$timestamp] $msg"
+    $entry = "[$timestamp] [$context] [$level] $msg"
     $logFile = Get-LogFile
     Add-Content $logFile $entry
     Write-Host $entry
 }
 
-# 🔥 Auto-clean old logs (older than $logRetentionDays)
+# 🧹 Auto-clean old logs
 Get-ChildItem $logDir -Filter "watch-*.log" | Where-Object {
     $_.LastWriteTime -lt (Get-Date).AddDays(-$logRetentionDays)
 } | ForEach-Object {
@@ -55,8 +54,9 @@ Get-ChildItem $logDir -Filter "watch-*.log" | Where-Object {
     Write-Host "🗑️ Deleted old log: $($_.Name)"
 }
 
-Write-Log "👀 Watching $downloads for .mp3 and .mp4 files... (Retention: $logRetentionDays days, Max size: $maxLogSizeMB MB)"
+Write-Log "WATCH-MEDIA" "👀 Watching $downloads for .mp3 and .mp4 files (Retention: $logRetentionDays days, Max size: $maxLogSizeMB MB)" "INFO"
 
+# --- File System Watcher
 $fsw = New-Object IO.FileSystemWatcher $downloads, "*.*"
 $fsw.IncludeSubdirectories = $false
 $fsw.EnableRaisingEvents = $true
@@ -65,26 +65,35 @@ Register-ObjectEvent $fsw Created -Action {
     $path = $Event.SourceEventArgs.FullPath
     $ext = [IO.Path]::GetExtension($path).ToLower()
 
-    Start-Sleep -Milliseconds 800  # wait for file to finish writing
+    Start-Sleep -Milliseconds 800  # allow file write to complete
 
-    if ($ext -eq ".mp3") {
-        $name = "sound_{0:yyyyMMdd_HHmmss}.mp3" -f (Get-Date)
-        $dest = Join-Path $using:sounds $name
-        Move-Item $path $dest -Force
-        Write-Log "✅ Moved sound → $dest"
-    }
-    elseif ($ext -eq ".mp4") {
-        $name = "video_{0:yyyyMMdd_HHmmss}.mp4" -f (Get-Date)
-        $dest = Join-Path $using:videos $name
-        Move-Item $path $dest -Force
-        Write-Log "✅ Moved video → $dest"
+    try {
+        if ($ext -eq ".mp3") {
+            $name = "sound_{0:yyyyMMdd_HHmmss}.mp3" -f (Get-Date)
+            $dest = Join-Path $using:sounds $name
+            Move-Item $path $dest -Force
+            Write-Log "WATCH-MEDIA" "✅ Moved sound → $dest"
+        }
+        elseif ($ext -eq ".mp4") {
+            $name = "video_{0:yyyyMMdd_HHmmss}.mp4" -f (Get-Date)
+            $dest = Join-Path $using:videos $name
+            Move-Item $path $dest -Force
+            Write-Log "WATCH-MEDIA" "✅ Moved video → $dest"
 
-        # Generate placeholder thumbnail
-        $thumb = Join-Path $using:thumbnails ($name.Replace(".mp4", ".jpg"))
-        Add-Content $thumb "Thumbnail placeholder for $name"
-        Write-Log "🖼️ Created thumbnail → $thumb"
+            # Thumbnail placeholder
+            $thumb = Join-Path $using:thumbnails ($name.Replace(".mp4", ".jpg"))
+            Add-Content $thumb "Thumbnail placeholder for $name"
+            Write-Log "WATCH-MEDIA" "🖼️ Created thumbnail → $thumb"
+        }
+        else {
+            Write-Log "WATCH-MEDIA" "⚠ Ignored non-media file: $path" "WARN"
+        }
     }
-    else {
-        Write-Log "ℹ️ Ignored non-media file: $path"
+    catch {
+        Write-Log "WATCH-MEDIA" "❌ Error processing file $path – $($_.Exception.Message)" "ERROR"
     }
 }
+
+# Keep alive
+Write-Log "WATCH-MEDIA" "Watcher started. Press Ctrl+C to exit." "INFO"
+while ($true) { Start-Sleep -Seconds 2 }

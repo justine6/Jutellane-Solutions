@@ -1,48 +1,62 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import BackToTopButton from './components/BackToTopButton';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] });
+import Topbar from "@/components/Topbar";
+import HeroSection from "@/components/HeroSection";
+import Footer from "@/components/Footer";
+import BackToTopButton from "@/components/BackToTopButton";
 
+// ✅ Google Font
+const inter = Inter({ subsets: ["latin"] });
+
+// ✅ Full metadata including favicon, OG, manifest
 export const metadata: Metadata = {
-  title: 'Jutellane Solutions | Cloud Confidence. Delivered.',
-  description: 'Certified DevSecOps and Cloud Automation for startups and growing teams.',
+  metadataBase: new URL("https://jutellane.com"),
+  title: "Jutellane Solutions | Cloud Confidence. Delivered.",
+  description:
+    "Certified DevSecOps and Cloud Automation for startups and growing teams.",
+  icons: {
+    icon: "/favicon.ico",                  // Browser tab favicon
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",        // iOS/Apple devices
+  },
+  manifest: "/manifest.json",              // For PWA installs
   openGraph: {
-    title: 'Jutellane Solutions | Cloud Confidence. Delivered.',
-    description: 'Secure, scalable AWS services by Justine Tekang — Certified DevSecOps Expert.',
-    url: 'https://jutellane-solutions.vercel.app',
-    siteName: 'Jutellane Solutions',
+    title: "Jutellane Solutions",
+    description: "Secure, scalable DevSecOps & Cloud services by Justine Tekang.",
+    url: "https://jutellane.com",
+    siteName: "Jutellane Solutions",
     images: [
       {
-        url: '/aws-banner.png',
+        url: "/og.png",
         width: 1200,
         height: 630,
-        alt: 'Jutellane Solutions Banner',
+        alt: "Jutellane Solutions Banner",
       },
     ],
-    type: 'website',
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jutellane Solutions",
+    description:
+      "Secure, scalable DevSecOps & Cloud services by Justine Tekang.",
+    images: ["/og.png"],
+    creator: "@justinelongla",
   },
 };
-import BackToTopButton from "@/app/components/BackToTopButton";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      {children}
-      <BackToTopButton />
-    </>
-  );
-}
-
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
+        <Topbar />
+        <HeroSection />
         {children}
         <Footer />
         <BackToTopButton />

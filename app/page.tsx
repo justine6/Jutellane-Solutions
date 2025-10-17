@@ -1,7 +1,7 @@
 import Image from "next/image";
-import AnimatedSection from "./components/AnimatedSection";
-import TestimonialSlider from "./components/TestimonialSlider";
-import NewsletterSignup from "./components/NewsletterSignup";
+import AnimatedSection from "@/components/AnimatedSection";
+import TestimonialSlider from "@/components/TestimonialSlider";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export default function HomePage() {
   return (
@@ -10,8 +10,8 @@ export default function HomePage() {
       <AnimatedSection>
         <div className="mb-8">
           <Image
-            src="/aws-banner.png"
-            alt="AWS DevSecOps Banner"
+            src="/brand/justine-logo.png"
+            alt="Justine Longla T Logo"
             width={1280}
             height={600}
             sizes="(max-width: 768px) 100vw, 1280px"

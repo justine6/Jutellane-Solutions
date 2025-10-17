@@ -12,8 +12,9 @@ export type Project = {
 const projectsDir = path.join(process.cwd(), "content/projects");
 
 export async function getAllProjects(): Promise<Project[]> {
+  if (!fs.existsSync(projectsDir)) return [];
   const files = fs.readdirSync(projectsDir).filter((f) => f.endsWith(".json"));
-  const projects = files.map((file) => {
+  return files.map((file) => {
     const filePath = path.join(projectsDir, file);
     const content = JSON.parse(fs.readFileSync(filePath, "utf8"));
     return {
@@ -22,12 +23,11 @@ export async function getAllProjects(): Promise<Project[]> {
       excerpt: content.excerpt ?? "",
       description: content.description ?? "",
       updatedAt: content.updatedAt ?? new Date().toISOString(),
-    } as Project;
+    };
   });
-  return projects;
 }
 
-export async function getProjectBySlug(slug: string): Promise<Project | null> {
+export async function getProjectBySlug(slug: string) {
   const filePath = path.join(projectsDir, `${slug}.json`);
   if (!fs.existsSync(filePath)) return null;
   const content = JSON.parse(fs.readFileSync(filePath, "utf8"));

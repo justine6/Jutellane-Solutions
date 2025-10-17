@@ -1,4 +1,3 @@
-// app/projects/[slug]/page.tsx
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getAllProjects, getProjectBySlug } from "@/lib/projects";

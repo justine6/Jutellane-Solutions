@@ -1,25 +1,21 @@
-import { MetadataRoute } from "next";
-import { allPosts } from "@/lib/get-all-posts"; // your blog fetcher
+import { type MetadataRoute } from "next";
+import { getAllProjects } from "@/lib/get-all-projects";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://jutellane-solutions.vercel.app";
+export default function sitemap(): MetadataRoute.Sitemap {
+  const base =
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://jutellane-solutions.vercel.app";
 
-  // Fetch blog posts dynamically
-  const posts = await allPosts();
+  const staticRoutes = ["", "/projects", "/about", "/contact"].map((p) => ({
+    url: `${base}${p}`,
+    lastModified: new Date(),
+  }));
 
-  const staticPages = [
-    { url: `${baseUrl}/`, priority: 1.0 },
-    { url: `${baseUrl}/projects`, priority: 0.8 },
-    { url: `${baseUrl}/about`, priority: 0.6 },
-    { url: `${baseUrl}/contact`, priority: 0.6 },
-  ];
-
-  const blogPages = posts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.updatedAt || new Date(),
-    changeFrequency: "weekly",
+  const projects = getAllProjects().map((p) => ({
+    url: `${base}/projects/${p.slug}`,
+    lastModified: new Date(p.lastModified),
+    changeFrequency: "monthly",
     priority: 0.7,
   }));
 
-  return [...staticPages, ...blogPages];
+  return [...staticRoutes, ...projects];
 }

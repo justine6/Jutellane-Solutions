@@ -1,46 +1,46 @@
+// app/projects/[slug]/page.tsx
 import { notFound } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-import { getAllProjects, type ProjectMeta } from "@/lib/get-all-projects";
+import type { Metadata } from "next";
+import { getAllProjects, getProjectBySlug } from "@/lib/projects";
 
-type Props = {
-  params: { slug: string };
-};
+type Params = Promise<{ slug: string }>;
 
-// Generate static paths for all projects
 export async function generateStaticParams() {
-  const projects = getAllProjects();
-  return projects.map((p) => ({ slug: p.slug }));
+  const all = await getAllProjects();
+  return all.map((p) => ({ slug: p.slug }));
 }
 
-export default function ProjectPage({ params }: Props) {
-  const projects = getAllProjects();
-  const project = projects.find((p) => p.slug === params.slug);
+export async function generateMetadata(
+  { params }: { params: Params }
+): Promise<Metadata> {
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
+  if (!project) return {};
+  return {
+    title: `${project.title} | Jutellane Solutions`,
+    description: project.excerpt ?? project.description ?? "",
+    alternates: { canonical: `/projects/${slug}` },
+    openGraph: {
+      title: project.title,
+      description: project.excerpt ?? project.description ?? "",
+      url: `/projects/${slug}`,
+      type: "article",
+    },
+    twitter: { card: "summary_large_image", title: project.title },
+  };
+}
 
-  if (!project) return notFound();
+export default async function ProjectPage(
+  { params }: { params: Params }
+) {
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
+  if (!project) notFound();
 
   return (
-    <main className="max-w-3xl mx-auto px-6 py-12">
-      <Link href="/projects" className="text-blue-600 hover:underline">
-        ← Back to Projects
-      </Link>
-
-      <h1 className="text-4xl font-bold mt-6 mb-4">{project.title}</h1>
-      <p className="text-gray-600 mb-6">{project.description}</p>
-
-      {project.image && (
-        <Image
-          src={project.image}
-          alt={project.title}
-          width={800}
-          height={400}
-          className="rounded-lg shadow-md mb-6"
-        />
-      )}
-
-      <p className="text-sm text-gray-500">
-        Last updated: {project.lastModified}
-      </p>
+    <main className="mx-auto max-w-3xl p-6 prose">
+      <h1>{project.title}</h1>
+      {project.excerpt && <p>{project.excerpt}</p>}
     </main>
   );
 }

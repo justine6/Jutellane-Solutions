@@ -1,0 +1,28 @@
+# From your repo root
+git checkout -b chore/health-endpoint
+
+# Make sure the folder exists
+New-Item -ItemType Directory -Force -Path "app\api\health" | Out-Null
+
+# Create the route handler (Next.js App Router)
+@'
+import { NextResponse } from "next/server";
+
+export const runtime = "edge"; // fast & cheap
+
+export async function GET() {
+  return NextResponse.json(
+    {
+      status: "ok",
+      app: "jutellane",
+      timestamp: new Date().toISOString(),
+    },
+    { status: 200 }
+  );
+}
+'@ | Set-Content -Path "app/api/health/route.ts" -Encoding UTF8
+
+# Commit & push (Preview build will start on Vercel)
+git add app/api/health/route.ts
+git commit -m "chore(api): add /api/health route for uptime checks"
+git push -u origin chore/health-endpoint

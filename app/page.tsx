@@ -2,6 +2,7 @@ import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import CertificationsGrid from "@/components/CertificationsGrid"; // 👈 add this
 
 export default function HomePage() {
   return (
@@ -113,6 +114,24 @@ export default function HomePage() {
           className="max-w-3xl mx-auto px-4 mb-16 scroll-mt-24"
         >
           <TestimonialSlider />
+        </section>
+      </AnimatedSection>
+
+      {/* 🔷 Certifications & Expertise */}
+      <AnimatedSection>
+        <section
+          id="certifications"
+          className="max-w-5xl mx-auto text-center px-4 mb-16 scroll-mt-24"
+        >
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-6">
+            Certifications & Expertise
+          </h2>
+          <p className="text-base sm:text-lg text-gray-700 mb-10">
+            AWS and Microsoft certifications that back every architecture
+            decision and automation pipeline I deliver.
+          </p>
+
+          <CertificationsGrid />
         </section>
       </AnimatedSection>
 

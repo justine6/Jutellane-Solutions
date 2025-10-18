@@ -35,9 +35,10 @@ export default function CertificationsGrid() {
       viewport={prefersReduced ? undefined : { once: true, amount: 0.2 }}
     >
       {/* Card 1 */}
-      <motion.div variants={prefersReduced ? undefined : item} className="border p-6 rounded-2xl shadow hover:shadow-lg transition">
+      <motion.div variants={prefersReduced ? undefined : item} className="border p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-out"
+  >
         <Image
-          src="/images/aws-solutions-architect-pro.png"
+          src="/images/AWS Solutions architect professional logo.png"
           alt="AWS Certified Solutions Architect – Professional"
           width={256}
           height={256}
@@ -57,7 +58,7 @@ export default function CertificationsGrid() {
       {/* Card 2 */}
       <motion.div variants={prefersReduced ? undefined : item} className="border p-6 rounded-2xl shadow hover:shadow-lg transition">
         <Image
-          src="/images/aws-devops-engineer-pro.png"
+          src="/images/AWS-Certified-DevOps-Engineer-Professional.png"
           alt="AWS Certified DevOps Engineer – Professional"
           width={256}
           height={256}
@@ -77,7 +78,7 @@ export default function CertificationsGrid() {
       {/* Card 3 */}
       <motion.div variants={prefersReduced ? undefined : item} className="border p-6 rounded-2xl shadow hover:shadow-lg transition">
         <Image
-          src="/images/azure.png"
+          src="/images/microsoft-logo-microsoft.webp"
           alt="Microsoft Certifications"
           width={128}
           height={128}
